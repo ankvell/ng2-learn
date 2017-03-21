@@ -1,0 +1,27 @@
+md-card-header.mat-card-header {
+    height: 100px;
+}
+
+md-card.user-card.mat-card {
+    float: left;
+    margin: 5px;
+    width: 345px;
+}
+
+md-card-title.mat-card-title {
+    font-size: 24px!important;
+    color: #61bcc7;
+}
+
+.tag {
+    display: inline-block;
+    padding: 5px;
+    background: rgb(44, 176, 189);
+    border-radius: 10px;
+    color: rgba(255, 255, 255, 0.8);
+    margin: 5px;
+}
+
+.tag.ext {
+    background: #3ebd92;
+}

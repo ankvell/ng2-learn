@@ -1,0 +1,38 @@
+<md-card class="user-card">
+  
+  <form class="user-form">
+    <md-input-container class="half-width">
+      <input mdInput placeholder="First name" #firstName required>
+    </md-input-container>
+    <md-input-container class="half-width">
+      <input mdInput placeholder="Last name" #lastName required>
+    </md-input-container>
+
+    <md-input-container class="half-width">
+      <input mdInput placeholder="Company" #company>
+    </md-input-container>
+    <md-input-container class="half-width">
+      <input mdInput placeholder="Phone number" #phone>
+    </md-input-container>
+    <md-input-container class="full-width">
+      <input mdInput placeholder="Email" #email required>
+    </md-input-container>
+
+    <div>
+      <md-input-container class="full-width">
+        <textarea mdInput placeholder="Address" #address></textarea>
+      </md-input-container>
+      <md-input-container class="full-width">
+        <textarea mdInput placeholder="About" #about></textarea>
+      </md-input-container>
+    </div>
+  </form>
+
+  <md-card-actions>
+      <a md-raised-button>CANCEL</a>
+      <a md-raised-button 
+        (click)='onAddUser(firstName.value, lastName.value, company.value, phone.value, email.value, address.value, about.value)'>
+         CREATE
+      </a>
+  </md-card-actions>
+</md-card>

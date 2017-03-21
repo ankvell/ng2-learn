@@ -1,0 +1,23 @@
+<md-card appHighlight class="user-card">
+  <md-card-header>
+      <md-card-title>{{user.name.first}} {{user.name.last}}</md-card-title>
+      <md-card-subtitle>Company: {{user.company}}</md-card-subtitle>
+      <md-card-subtitle>Email: {{user.email}}</md-card-subtitle>
+      <md-card-subtitle>Phone: {{user.phone}}</md-card-subtitle>
+  </md-card-header>
+  <img *ngIf="user.picture" md-card-image src="{{user.picture}}">
+  <md-card-content>
+      <p>{{user.about}}</p>
+      <p (click)="showTags = !showTags">
+          <span *ngIf="showTags">Hide</span>
+          <span *ngIf="!showTags">Show</span> Tags!
+      </p>
+      <span *ngIf="showTags">
+          <span class="tag" [ngClass]="{ 'ext': tag.length > 5 }" *ngFor="let tag of user.tags">{{tag}}</span>
+      </span>
+  </md-card-content>
+  <md-card-actions>
+      <a md-raised-button>LIKE</a>
+      <a md-raised-button>SHARE</a>
+  </md-card-actions>
+</md-card>

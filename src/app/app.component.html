@@ -1,26 +1,17 @@
 <md-toolbar>
   <header-title></header-title>
-  <a md-raised-button routerLink="." (click)="showMore = !showMore">
-      <md-icon>check</md-icon>Hide details
+ <div class="actions">
+  <a md-raised-button routerLink="." (click)="showUserForm = !showUserForm">
+      <md-icon>add</md-icon>Add User Card
   </a>
+  <a md-raised-button routerLink="." (click)="removeUser()">
+      <md-icon>content_cut</md-icon>Remove Random User Card
+  </a>
+ </div>
 </md-toolbar>
 
-<md-grid-list cols="3" rowHeight="600px">
-  <md-grid-tile *ngFor="let user of usersList">
-      <md-card class="user-card">
-        <md-card-header>
-            <div md-card-avatar class="example-header-image"></div>
-            <md-card-title>{{user.name.first}}</md-card-title>
-            <md-card-subtitle>{{user.name.last}}</md-card-subtitle>
-        </md-card-header>
-        <img md-card-image src="{{user.picture}}">
-        <md-card-content *ngIf="showMore">
-            <p>{{user.about}}</p>
-        </md-card-content>
-        <md-card-actions>
-            <button md-button>LIKE</button>
-            <button md-button>SHARE</button>
-        </md-card-actions>
-    </md-card>
-  </md-grid-tile>
-</md-grid-list>
+<div *ngIf="showUserForm">
+    <app-user-form (addUser)="addUser($event)"></app-user-form>
+</div>
+
+<app-users-list></app-users-list>

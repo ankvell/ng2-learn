@@ -1,0 +1,17 @@
+.user-form {
+  width: 700px;
+  margin: 0 auto;
+  color: #67c1cc;
+}
+
+.full-width {
+  width: 95%;
+  margin: 0 15px;
+}
+.half-width {
+  width: 45%;
+  margin: 0 15px;
+}
+md-card-actions.mat-card-actions {
+  text-align: center;
+}

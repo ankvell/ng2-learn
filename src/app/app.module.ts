@@ -5,18 +5,22 @@ import { HttpModule } from '@angular/http';
 import { MaterialModule } from '@angular/material';
 
 import { AppComponent } from './app.component';
-import { AppService } from './app.service';
-import { HeaderComponentComponent } from './header-component/header-component.component';
+import { AppService } from './services/app.service';
+import { HeaderModule } from './components/header/header.module';
+import { UsersListModule } from './components/users-list/users-list.module';
+import { UserFormModule } from './components/user-form/user-form.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    HeaderComponentComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
+    HeaderModule,
+    UsersListModule,
+    UserFormModule,
     MaterialModule.forRoot()
   ],
   providers: [AppService],
