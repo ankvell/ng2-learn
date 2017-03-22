@@ -1,0 +1,26 @@
+<div class="container" >
+    <div class="title jumbotron">
+        <h3>Welcome!</h3>
+    </div>
+    <div class="panel-body">
+        <div>
+            <div class="input-field">
+                <input [(ngModel)]="user.email" id="email" placeholder="Enter email"
+                    type="email" class="validate form-control">
+                <label for="email">Email</label>
+            </div>
+        </div>
+        <div>
+            <div class="input-field">
+                <input [(ngModel)]="user.password" id="password"  placeholder="Enter password"
+                    type="password" class="validate form-control">
+                <label for="password">Password</label>
+            </div>
+        </div>
+        <span>{{errorMsg}}</span>
+        <button (click)="login()" 
+            class="btn btn-default" 
+            type="submit" name="action">Login
+        </button>
+    </div>
+</div>
