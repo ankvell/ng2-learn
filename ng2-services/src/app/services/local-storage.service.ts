@@ -1,11 +1,11 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Inject } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { User } from '../components/login/user.model';
 
 var users = [
-  new User('admin@admin','admin'),
-  new User('user@user','user')
+  new User('admin','root'),
+  new User('user','123')
 ];
  
 @Injectable()
@@ -20,7 +20,7 @@ export class LocalStorageService {
   }
 
   public isLoggedIn(): boolean {
-    if(this.getValue('user_name')) {
+    if(this.getValue('user')) {
       return true;
     }
 
@@ -32,7 +32,9 @@ export class LocalStorageService {
     var authenticatedUser: User = users.find(u => u.email === user.email);
     if (authenticatedUser && authenticatedUser.password === user.password) {
 
-      this.setValue('user_name', JSON.stringify(authenticatedUser));
+      this.setValue('user', JSON.stringify(authenticatedUser));
+
+
       this._router.navigate(['home']);      
       return true;
     }
@@ -40,7 +42,9 @@ export class LocalStorageService {
   }
 
   public logout(): void {
-    this.storage.removeItem('user_name');
+    this.storage.removeItem('user');
+    this.storage.removeItem('token');
+
     this._router.navigate(['login']);
   }
 

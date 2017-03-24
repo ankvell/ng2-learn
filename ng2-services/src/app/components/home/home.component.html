@@ -1,7 +1,23 @@
-<div class="container" >
+<div class="container">
   <div class="content">
-    <span>Congratulations, you have successfully logged in!!</span>
-    <br />
-    <a (click)="logout()" href="#">Click Here to logout</a>
+    
+    <div class="panel panel-info">
+      <div class="panel-body">
+        <span>Congratulations, you have successfully logged in!!</span>
+        <a class="btn btn-default pull-right" (click)="logout()" href="#">Click Here to logout</a>
+      </div>
+    </div>
+
+    <div class="panel panel-info">
+      <div class="panel-body">
+        Angular2 {{header_info.type}} : {{header_info.topic}}
+      </div>
+    </div>
+
+    <div class="panel panel-info" appHighlight color="maroon">
+      <div class="panel-body">
+        Click Here to change text color!
+      </div>
+    </div>
   </div>
 </div>

@@ -5,17 +5,18 @@ import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { LoginComponent } from './components/login/login.component';
-import { HomeComponent } from './components/home/home.component';
 import { AppRoutingModule } from './app.routing.module';
-import { LocalStorageService } from './services/local-storage.service';
-import { AuthorizationGuard } from './services/auth.guard';
+
+import { LoginComponent, HomeComponent } from './components';
+import { LocalStorageService, AccessToken, TokenGeneratorFactory, AccessTokenService, AuthorizationGuard } from './services';
+import { HighlightDirective } from './directives/highlight.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    HomeComponent
+    HomeComponent,
+    HighlightDirective
   ],
   imports: [
     BrowserModule,
@@ -26,7 +27,8 @@ import { AuthorizationGuard } from './services/auth.guard';
   ],
   providers: [
     AuthorizationGuard, 
-    LocalStorageService
+    LocalStorageService,
+    AccessTokenService
   ],
   bootstrap: [AppComponent]
 })
